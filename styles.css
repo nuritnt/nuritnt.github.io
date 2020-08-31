@@ -54,6 +54,7 @@ body {
     color: #8300FF;
     padding: 0 2rem;
     max-width: 600px;
+    display: block;
 }
 
 .main__title {
