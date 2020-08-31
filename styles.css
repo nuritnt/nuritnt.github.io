@@ -1,0 +1,82 @@
+@import "reset.css";
+@import "fonts.css";
+
+html {
+    font-size: 24px;
+    min-height: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    html {
+        font-size: 22px;
+    }
+}
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+body {
+    min-height: 100%;
+    background: #aff;
+    font-family: "Silka";
+    background-repeat: no-repeat;
+    background-image: linear-gradient(180deg, #FFC7F8 0%, #DBE2FA 55%, #98FFF8 100%);
+    margin-bottom: 6rem;
+}
+
+.header {
+    height: 80vh;
+
+}
+
+.header__headline {
+    color: #FFF;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.header__image {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.header__image img {
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    color: #8300FF;
+    padding: 0 2rem;
+    max-width: 600px;
+}
+
+.main__title {
+    font-weight: 600;
+    font-size: 3.375rem;
+}
+
+.main__description {
+    font-weight: 300;
+    line-height: 1.25;
+    margin: 1.5rem 0;
+}
+
+.main__socials li {
+    display: inline;
+    margin-right: 0.5rem;
+}
+
+.main__socials a {
+    color: #8300FF;
+    transition: 1s color;
+}
+
+.main__socials a:hover {
+    color: #FF00A8;
+}
