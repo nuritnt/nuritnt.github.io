@@ -8,12 +8,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
+
 <body>
     <header class="header">
-        <h1 class="header__headline">nuri_tnt</h1>
-        <figure class="header__image">
-            <img src="assets/portrait_tugce_nur_tas.jpg" alt="portrait of a young padawan looking for a purpose">
-        </figure>
+        <div class="header__content-wrapper">
+            <h1 class="header__headline">nuri_tnt</h1>
+            <figure class="header__image">
+                <img src="assets/portrait_tugce_nur_tas.jpg" alt="portrait of a young padawan looking for a purpose">
+            </figure>
+        </div>
+        <div class="header__bubble-wrapper"></div>
     </header>
 
     <main class="main">
@@ -33,6 +37,31 @@
             </li>
         </ul>
     </main>
+
+    <script>
+        function createSpanElements() {
+            const bubbleWrapper = document.querySelector(".header__bubble-wrapper");
+            for (let i = 0; i < 18; i++) {
+                console.log("meworky")
+                let newSpan = document.createElement("SPAN");
+                bubbleWrapper.appendChild(newSpan);
+                newSpan.classList.add("header__bubble");
+
+                const bubbleSize = Math.random() * 2;
+                newSpan.style.width = bubbleSize + 'rem';
+                newSpan.style.height = bubbleSize + 'rem';
+                newSpan.style.top = Math.random() * 100 + '%';
+                newSpan.style.left = Math.random() * 100 + '%';
+                newSpan.style.opacity = Math.random() * 0.5 + 0.1;
+            }
+
+            const contentWrapper = document.querySelector(".header__content-wrapper");
+            contentWrapper.style.top = Math.random() * 80 + '%';
+            contentWrapper.style.left = Math.random() * 80 + '%';
+        }
+
+        createSpanElements()
+    </script>
 </body>
 
 </html>
