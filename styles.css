@@ -19,7 +19,6 @@ html {
 
 body {
     min-height: 100%;
-    background: #aff;
     font-family: "Silka";
     background-repeat: no-repeat;
     background-image: linear-gradient(180deg, #FFC7F8 0%, #DBE2FA 55%, #98FFF8 100%);
@@ -29,6 +28,7 @@ body {
 .header {
     height: 80vh;
     position: relative;
+    overflow: hidden;
 }
 
 .header__content-wrapper {
@@ -37,11 +37,14 @@ body {
 }
 
 .header__headline {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     color: #FFF;
     font-style: italic;
     font-weight: 600;
     font-size: 1.5rem;
+    z-index: 10;
 }
 
 .header__image {
@@ -76,7 +79,7 @@ body {
 .main {
     color: #8300FF;
     padding: 0 2rem;
-    max-width: 600px;
+    max-width: 500px;
     display: block;
 }
 
@@ -103,4 +106,12 @@ body {
 
 .main__socials a:hover {
     color: #FF00A8;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .header__image {
+        width: 10rem;
+        height: 10rem;
+    }
 }

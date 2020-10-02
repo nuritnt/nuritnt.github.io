@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nuri_tnt</title>
+    <title>Tuğçe Nur Taş</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -12,7 +12,7 @@
 <body>
     <header class="header">
         <div class="header__content-wrapper">
-            <h1 class="header__headline">nuri_tnt</h1>
+            <h1 class="header__headline">tnt</h1>
             <figure class="header__image">
                 <img src="assets/portrait_tugce_nur_tas.jpg" alt="portrait of a young padawan looking for a purpose">
             </figure>
@@ -23,7 +23,9 @@
     <main class="main">
         <h2 class="main__title">Selam</h2>
         <p class="main__description">
-            My name is Tuğçe Nur Taş and I like ArtAttack and Angela Anaconda.
+            My name is Tuğçe Nur Taş and I don't want to stop growing.
+            <br>
+            I am a Software Engineer who likes to type on clicky keyboards.
         </p>
         <ul class="main__socials">
             <li>
@@ -39,10 +41,12 @@
     </main>
 
     <script>
+        const bubbleWrapper = document.querySelector(".header__bubble-wrapper");
+        const header = document.querySelector('.header');
+        const image = document.querySelector('.header__image');
+
         function createSpanElements() {
-            const bubbleWrapper = document.querySelector(".header__bubble-wrapper");
             for (let i = 0; i < 18; i++) {
-                console.log("meworky")
                 let newSpan = document.createElement("SPAN");
                 bubbleWrapper.appendChild(newSpan);
                 newSpan.classList.add("header__bubble");
@@ -50,17 +54,37 @@
                 const bubbleSize = Math.random() * 2;
                 newSpan.style.width = bubbleSize + 'rem';
                 newSpan.style.height = bubbleSize + 'rem';
+
                 newSpan.style.top = Math.random() * 100 + '%';
                 newSpan.style.left = Math.random() * 100 + '%';
                 newSpan.style.opacity = Math.random() * 0.5 + 0.1;
             }
 
-            const contentWrapper = document.querySelector(".header__content-wrapper");
-            contentWrapper.style.top = Math.random() * 80 + '%';
-            contentWrapper.style.left = Math.random() * 80 + '%';
         }
 
-        createSpanElements()
+        function placeImage() {
+            let headerDimensions = {
+                height: header.offsetHeight,
+                width: header.offsetWidth
+            };
+            let imageDimensions = {
+                height: image.offsetHeight,
+                width: image.offsetWidth
+            };
+            let topPos = Math.round(Math.random() * (headerDimensions.height - imageDimensions.height));
+            let leftPos = Math.round(Math.random() * (headerDimensions.width - imageDimensions.width));
+
+            const contentWrapper = document.querySelector(".header__content-wrapper");
+            contentWrapper.style.top = topPos + 'px';
+            contentWrapper.style.left = leftPos + 'px';
+        }
+
+        createSpanElements();
+        placeImage();
+
+        window.addEventListener('resize', () => {
+            placeImage();
+        });
     </script>
 </body>
 
