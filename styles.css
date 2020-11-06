@@ -25,14 +25,26 @@ body {
     margin-bottom: 6rem;
 }
 
+.bubble-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
 .header {
-    height: 80vh;
+    height: 70vh;
     position: relative;
     overflow: hidden;
 }
 
 .header__content-wrapper {
     position: absolute;
+    top: 8vh;
+    right: 80px;
     z-index: 20;
 }
 
@@ -60,20 +72,23 @@ body {
     height: 100%;
 }
 
-.header__bubble-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-}
-
 .header__bubble {
     display: block;
     position: absolute;
     background: #fff;
     border-radius: 100%;
+    animation: resize-bubbles 1.5s infinite cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    animation-direction: alternate;
+}
+
+@keyframes resize-bubbles {
+    to {
+        transform: scale(0.1);
+    }
+
+    from {
+        transform: scale(1);
+    }
 }
 
 .main {
@@ -81,6 +96,8 @@ body {
     padding: 0 2rem;
     max-width: 500px;
     display: block;
+    z-index: 10;
+    position: relative;
 }
 
 .main__title {
