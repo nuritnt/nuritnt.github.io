@@ -11,6 +11,7 @@ html {
         font-size: 22px;
     }
 }
+
 @media screen and (max-width: 480px) {
     html {
         font-size: 18px;
@@ -94,7 +95,7 @@ body {
 .main {
     color: #8300FF;
     padding: 0 2rem;
-    max-width: 600px;
+    max-width: 630px;
     display: block;
     z-index: 10;
     position: relative;
@@ -129,6 +130,7 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+
     /* For mobile phones: */
     .header__image {
         width: 10rem;
